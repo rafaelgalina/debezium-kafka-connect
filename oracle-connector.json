@@ -1,0 +1,19 @@
+ {
+    "name": myconnector",
+    "config":  
+    { 
+    "connector.class" : "io.debezium.connector.oracle.OracleConnector",
+    "tasks.max": "1",
+    "database.user": "user", 
+    "database.password": "password",   
+    "database.dbname":"SID",
+    "database.server.name": "test",    
+    "schema.include.list": "TRACK", 
+    "database.connection.adapter":"logminer",   
+    "database.url":"jdbc:oracle:thin:@hostname:1521/SID",    
+    "table.include.list": "TRACK.DELIVERY",
+    "database.history.kafka.bootstrap.servers": "broker1.intranet:9092",
+    "database.history.kafka.topic": "track.schema-history",    
+    "snapshot.mode": "initial"    
+    }
+}
